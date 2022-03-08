@@ -1,0 +1,6 @@
+{
+  "solargraph-docker": {
+    "tcp": "localhost:17658",
+    "root_uri": "./api"
+  }
+}
