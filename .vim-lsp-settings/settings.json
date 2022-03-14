@@ -1,6 +1,12 @@
 {
   "solargraph-docker": {
     "tcp": "localhost:17658",
-    "root_uri": "./api"
+    "root_uri_patterns": [
+      "Gemfile",
+      "Gemfile.lock",
+      "Rakefile",
+      "config.ru",
+      ".ruby-version"
+    ]
   }
 }
