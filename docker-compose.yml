@@ -33,17 +33,17 @@ services:
     ports:
       - '17658:7658'
     restart: always
-      #  front:
-      #    build: ./docker/front
-      #    volumes:
-      #      - ./front:/app
-      #    ports:
-      #      - '8080:8080'
-      #    tty: true
-      #    stdin_open: true
-      #    command: npm run serve
-
+  front:
+    build: ./docker/front
+    volumes:
+      - ./front:/nuxt-app
+      - n_modules:/nuxt-app/node_modules
+    ports:
+      - '13000:3000'
+    tty: true
+    stdin_open: true
+    command: npm run dev -- -o
 volumes:
-  bundle:
   db_data:
-
+  bundle:
+  n_modules:
