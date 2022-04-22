@@ -24,7 +24,7 @@ services:
       - EDITOR=vim
       - TZ=Asia/Tokyo
     ports:
-      - '8000:3000'
+      - '23000:3000'
     depends_on:
       - db
   solargraph:
