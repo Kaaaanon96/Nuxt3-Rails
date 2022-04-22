@@ -28,5 +28,8 @@ bundle-i:
 credentials:
 	$(RUN_ONLY) api rails credentials:edit
 
-.PHONY: default db-init solargraph-init yard-gems rails-c rails-c-only bundle-i credentials
+npm-i:
+	$(RUN_ONLY) front npm install $(ARG)
+
+.PHONY: default db-init solargraph-init yard-gems rails-c rails-c-only bundle-i credentials npm-i
 
