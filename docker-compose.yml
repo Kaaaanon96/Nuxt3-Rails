@@ -7,6 +7,13 @@ x-rails-base: &rails-base
       - bundle:/usr/local/bundle
     tty: true
     stdin_open: true
+x-nuxt-base: &nuxt-base
+    build: ./docker/front
+    volumes:
+      - ./front:/nuxt-app
+      - n_modules:/nuxt-app/node_modules
+    tty: true
+    stdin_open: true
 
 services:
   db:
@@ -34,15 +41,12 @@ services:
       - '17658:7658'
     restart: always
   front:
-    build: ./docker/front
-    volumes:
-      - ./front:/nuxt-app
-      - n_modules:/nuxt-app/node_modules
+    <<: *nuxt-base
+    command: npm run dev -- -o
     ports:
       - '13000:3000'
-    tty: true
-    stdin_open: true
-    command: npm run dev -- -o
+  volar:
+    <<: *nuxt-base
 volumes:
   db_data:
   bundle:

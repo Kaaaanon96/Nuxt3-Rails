@@ -8,5 +8,13 @@
       "config.ru",
       ".ruby-version"
     ]
+  },
+  "volar-docker": {
+    "cmd": "docker-compose exec -T volar npx vue-language-server --stdio",
+    "root_uri_patterns": [
+      "nuxt.config.ts",
+      "package.json",
+      "package-lock.json"
+    ]
   }
 }
