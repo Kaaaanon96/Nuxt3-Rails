@@ -42,7 +42,7 @@ services:
     restart: always
   front:
     <<: *nuxt-base
-    command: npm run dev -- -o
+    command: npm run dev
     ports:
       - '13000:3000'
   volar:

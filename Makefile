@@ -6,6 +6,8 @@ EXEC_BASE:= docker-compose exec
 default:
 	@echo "a"
 
+lsp-init: solargraph-init volar-init
+
 bundle-i:
 	$(RUN_ONLY) api bundle install
 
@@ -35,5 +37,5 @@ volar-init:
 	$(EXEC_BASE) volar mkdir -p `pwd`
 	$(EXEC_BASE) volar ln -s /nuxt-app `pwd`/front
 
-.PHONY: default db-init solargraph-init yard-gems rails-c rails-c-only bundle-i credentials npm-i
+.PHONY: default lsp-init db-init solargraph-init yard-gems rails-c rails-c-only bundle-i credentials npm-i volar-init
 
