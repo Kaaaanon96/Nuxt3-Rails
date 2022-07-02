@@ -31,7 +31,7 @@ yard-gems:
 	$(EXEC_BASE) solargraph bundle exec yard gems
 
 npm-i:
-	$(RUN_ONLY) front npm install $(ARG)
+	$(RUN_ONLY) front npm --engine-strict install $(ARG)
 
 volar-init:
 	$(EXEC_BASE) volar mkdir -p `pwd`
