@@ -1,4 +1,4 @@
-FROM node:16.14.2
+FROM node:16.11.1
 
 ENV NUXT_ROOT /nuxt-app
 WORKDIR $NUXT_ROOT
