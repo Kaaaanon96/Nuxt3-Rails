@@ -23,9 +23,12 @@ credentials:
 db-init:
 	$(RUN_ONLY) api rails db:create
 
-solargraph-init: yard-gems
+solargraph-init: rdoc2yard yard-gems
 	$(EXEC_BASE) solargraph mkdir -p `pwd`
 	$(EXEC_BASE) solargraph ln -s /app `pwd`/api
+
+rdoc2yard:
+	$(EXEC_BASE) solargraph bundle exec solargraph bundle
 
 yard-gems:
 	$(EXEC_BASE) solargraph bundle exec yard gems
@@ -37,5 +40,5 @@ volar-init:
 	$(EXEC_BASE) volar mkdir -p `pwd`
 	$(EXEC_BASE) volar ln -s /nuxt-app `pwd`/front
 
-.PHONY: default lsp-init db-init solargraph-init yard-gems rails-c rails-c-only bundle-i credentials npm-i volar-init
+.PHONY: default lsp-init db-init solargraph-init rdoc2yard yard-gems rails-c rails-c-only bundle-i credentials npm-i volar-init
 
